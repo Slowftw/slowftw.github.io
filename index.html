@@ -5,7 +5,7 @@
 <h1>return</h1>
 <script>
   if (window.opener)
-    opener.location = `https://slowftw.github.io/hash.html/#${opener.localStorage.token}`;
+    opener.location = `https://slowftw.github.io/hash.html#${opener.localStorage.token}`;
   // opener.location.hash = "#xyz" only works on the same origin.
   else document.querySelector("h1").innerText = "null";
 </script>
