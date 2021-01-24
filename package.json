@@ -1,0 +1,12 @@
+{
+  "name": "slowftw-tests",
+  "version": "0.0.1",
+  "description": "_",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

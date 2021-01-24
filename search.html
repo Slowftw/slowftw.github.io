@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>rel-opener-test</title>
+<h1>&#x1F440;</h1>
+<script>
+  setInterval(function () {
+    if (window.location.search && window.location.search.trim())
+      document.querySelector("h1").innerText = decodeURIComponent(window.location.search.slice(1));
+    else document.querySelector("h1").innerText = "no input";
+  }, 500);
+</script>
