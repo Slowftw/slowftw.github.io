@@ -4,7 +4,7 @@
 <h1>&#x1F440;</h1>
 <script>
   setInterval(function () {
-    if (window.location.hash && window.location.hash != "#")
+    if (window.location.hash && window.location.hash.trim())
       document.querySelector("h1").innerText = decodeURIComponent(
         window.location.hash.slice(1)
       );
