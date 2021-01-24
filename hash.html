@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>rel-opener-test</title>
+<h1>&#x1F440;</h1>
+<script>
+  setInterval(function () {
+    if (window.location.hash && window.location.hash != "#")
+      document.querySelector("h1").innerText = decodeURIComponent(
+        window.location.hash.slice(1)
+      );
+  }, 500);
+</script>
