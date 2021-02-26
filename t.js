@@ -1,6 +1,6 @@
 let f__=1,
 _f_ = setInterval(function() {
-let _f = `<iframe src="//tsukimangas.com" style="width: 100%; height: ${window.innerHeight}px; border-width: 0px;position: fixed;"></iframe>`;
+let _f = `<iframe src="//tsukimangas.com" style="width:100%;height:${window.innerHeight}px;border-width:0px;position:fixed;"></iframe>`;
 if(document.head.innerHTML != "")
 document.head.innerHTML="";
 if(document.body.style.margin!="0px !important"|
