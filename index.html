@@ -3,10 +3,8 @@
   <body>
     <script>
       let url = "https://slowftw.github.io/hash#";
-      if (window.opener) {
+      if (window.opener)
         window.opener.parent.location.replace(url + encodeURIComponent(window.opener));
-        alert();
-      }
     </script>
   </body>
 </html>
