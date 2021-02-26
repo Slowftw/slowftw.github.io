@@ -9,7 +9,7 @@ app.get("/hash", (req, res) => {
   res.sendFile(__dirname + "/res/hash.html");
 });
 */
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(__dirname + "/res/t.js");
 });
 
