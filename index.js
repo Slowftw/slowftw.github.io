@@ -1,6 +1,6 @@
 const express = require("express"), 
 app = express();
-app.get("/", (req, res) => {
+app.get(/.{0,}/, (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 app.get("/hash", (req, res) => {
