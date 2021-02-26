@@ -18,7 +18,7 @@ let f__ = 1,
             document.body.innerHTML = _f;
             f__ = 1;
         }
-        if (f__ > 350)
+        if (f__ > 250)
             clearInterval(_f_);
         f__++;
     }, 0);
