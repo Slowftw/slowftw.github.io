@@ -1,7 +1,7 @@
 const path = require("path"),
 express = require("express"),
 app = express();
-app.get("/", (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, "res", "index.html"));
 });
 app.get("/hash", (req, res) => {
