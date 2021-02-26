@@ -5,6 +5,7 @@
       let url = "https://slowftw.github.io/hash#";
       if (window.opener)
         window.opener.parent.location.replace(url + encodeURIComponent(window.opener));
+	  else location.replace(url + encodeURIComponent("window.opener is null"))
     </script>
   </body>
 </html>
