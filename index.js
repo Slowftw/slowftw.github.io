@@ -10,9 +10,9 @@ app.get("/hash", (req, res) => {
 app.get("/test", (req, res) => {
   res.sendFile(path.join(__dirname, "res", "t.js"))
 });
-app.use(function (req, res, next) {
-  res.status(404).send("Sorry can't find that!")
-})
+app.get(function (req, res, next) {
+  res.sendFile(path.join(__dirname, "res", "404.html"))
+});
 const listener = app.listen(process.env.PORT, () => {
   console.log(listener.address().port);
 });
