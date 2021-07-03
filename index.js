@@ -7,8 +7,8 @@ app.get("/", (req, res) => {
 app.get("/hash", (req, res) => {
   res.sendFile(__dirname+"/hash.html")
 });
-app.get("/test", (req, res) => {
-  res.sendFile(__dirname+"/t.js");
+app.get("/favicon.ico", (req, res) => {
+  res.sendFile(__dirname+"/favicon.ico");
 });
 app.use(function (req, res, next) {
   res.status(404).sendFile(__dirname+"/404.html");
