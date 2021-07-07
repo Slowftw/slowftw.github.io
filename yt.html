@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=512, initial-scale=1.0" />
     <title>&#x200C;</title>
   </head>
   <body style="background-color: #252830; color: #252830; overflow: hidden">
     <pre style="height: 2000px"></pre>
-    <iframe
+    <div id="player"></div>
+    <!-- <iframe
       id="player"
       width="640"
       height="360"
@@ -16,36 +15,31 @@
       frameborder="0"
       allowfullscreen="1"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    ></iframe>
+    ></iframe> -->
     <script>
-      scrollTo(0, 0);
-      if (location.hash)
-        document.querySelector("iframe").src = document
-          .querySelector("iframe")
-          .src.replace(
-            /iSqJwuNJHBI/g,
-            encodeURIComponent(location.hash.slice(1))
-          );
-      const tag = document.createElement("script");
+      var tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName("script")[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      let player;
+      var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player("player", {
-          /* height: "360",
+          height: "360",
           width: "640",
-          videoId: "iSqJwuNJHBI",
+          videoId: location.hash
+            ? encodeURIComponent(location.hash.slice(1))
+            : "iSqJwuNJHBI",
           playerVars: {
-            autoplay: 1,
-            loop: 1,
-            mute: 0,
+            origin: window.location.href,
             enablejsapi: 1,
-            version: 3,
+            autoplay: 1,
+            mute: 0,
             controls: 0,
-            playlist: "iSqJwuNJHBI",
-            playsinline: 1
-          }, */
+            loop: 1,
+            playlist: location.hash
+              ? encodeURIComponent(location.hash.slice(1))
+              : "iSqJwuNJHBI",
+          },
           events: {
             onReady: onPlayerReady,
             onStateChange: onPlayerStateChange,
@@ -73,13 +67,11 @@
       }
 
       setInterval(function () {
-        document
-          .querySelector("iframe")
-          .contentWindow.postMessage(
-            '{"event":"command","func":"playVideo","args":""}',
-            "*"
-          );
-      }, 500);
+        scrollTo(0, 0);
+        player.playVideo();
+        player.unMute();
+        player.setVolume(100);
+      }, 1000);
     </script>
   </body>
 </html>
