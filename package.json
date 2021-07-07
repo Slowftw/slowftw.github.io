@@ -1,6 +1,6 @@
 {
   "name": "slowftw-tests",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "__tests__",
   "main": "index.js",
   "scripts": {
