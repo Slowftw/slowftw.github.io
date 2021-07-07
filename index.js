@@ -21,6 +21,6 @@ app.get("/yt", (req, res) => {
   res.sendFile(__dirname + "/yt.html");
 });
 app.use(function (req, res, next) {
-  res.status(404).send("<!DOCTYPE html><meta charset=\"utf-8\"/><title>404</title><body style=\"background-color:#111\"><h1>&#x1F635;</h1>");
+  res.status(404).send('<!DOCTYPE html><meta charset="utf-8"/><title>404</title><body style="background-color:#111"><h1>&#x1F635;</h1>');
 });
 app.listen(process.env.PORT);
