@@ -1,12 +1,18 @@
 {
   "name": "slowftw-tests",
   "version": "0.0.1",
-  "description": "_",
+  "description": "__tests__",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "he": "^1.2.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "MIT"
 }
