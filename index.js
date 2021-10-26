@@ -17,9 +17,11 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
   }
 });
-app.get("/yt", (req, res) => {
-  res.sendFile(__dirname + "/yt.html");
-});
+//iframe test
+app.get("/yt",(req,res)=>{res.sendFile(__dirname+"/yt.html")});
+//
+app.get("/s",(req,res)=>{res.redirect("https://example.org")});
+//notfound
 app.use(function (req, res, next) {
   res.status(404).send('<!DOCTYPE html><meta charset="utf-8"/><title>404</title><body style="background-color:#111"><h1>&#x1F635;</h1>');
 });
