@@ -14,12 +14,16 @@ app.get("/", (req, res) => {
       `<!DOCTYPE html><html><head><meta charset="utf-8"/><meta property="description"content="${title}"/><meta name="theme-color"content="#101010"/><link rel="icon"href="https://cdn.discordapp.com/attachments/833228686937292821/837417245609033728/s.jpg"type="image/jpg"><meta property="og:site_name"content="🐢"/><meta property="og:image"content="https://cdn.discordapp.com/attachments/833228686937292821/836719818030972928/cats.gif"/><meta property="og:image:width"content="180"/><meta property="og:image:height"content="180"/><meta property="og:url"content="https://slowftw.github.io/"/><meta property="og:title"content="${title}"/><meta property="og:description"content="${description}"/><title>${title}</title></head><body style="background-color:#111"><h1 style="color:#FFF">${description}</h1></body></html>`
     );
   } catch (_) {
-    res.sendFile(__dirname + "/index.html");
+    res.send(
+      '<!DOCTYPE html><html><head><meta charset="utf-8"/><meta property="description"content="👁‍🗨"/><meta name="theme-color"content="#101010"/><link rel="icon"href="https://cdn.discordapp.com/attachments/833228686937292821/837417245609033728/s.jpg"type="image/jpg"><meta property="og:site_name"content="🐢"/><meta property="og:image"content="https://cdn.discordapp.com/attachments/833228686937292821/836719818030972928/cats.gif"/><meta property="og:image:width"content="180"/><meta property="og:image:height"content="180"/><meta property="og:url"content="https://slowftw.github.io/"/><meta property="og:title"content="👁‍🗨"/><meta property="og:description"content="📼"/><title>👁‍🗨</title></head><body style="background-color:#111"><h1>📼</h1></body></html>'
+    );
   }
 });
 //iframe test
 app.get("/yt", (req, res) => {
-  res.sendFile(__dirname + "/yt.html");
+  res.send(
+    '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><title>&#x200C;</title></head><body style="background-color:#252830;color:#252830;overflow:hidden"><pre style="height:2000px"></pre><div id="player"></div><script>var tag=document.createElement("script");tag.src="https://www.youtube.com/iframe_api";var firstScriptTag=document.getElementsByTagName("script")[0];firstScriptTag.parentNode.insertBefore(tag,firstScriptTag);var player;function onYouTubeIframeAPIReady(){player=new YT.Player("player",{height:"360",width:"640",videoId:location.hash?encodeURIComponent(location.hash.slice(1)):"iSqJwuNJHBI",playerVars:{origin:"",enablejsapi:1,autoplay:1,mute:0,controls:0,loop:1,playlist:location.hash?encodeURIComponent(location.hash.slice(1)):"iSqJwuNJHBI"},events:{onReady:onPlayerReady,onStateChange:onPlayerStateChange}})}function onPlayerReady(event){event.target.playVideo();event.target.setVolume(100);player.playVideo();player.setVolume(100)}function onPlayerStateChange(event){if(event.data==YT.PlayerState.PAUSED){event.target.playVideo();event.target.unMute();event.target.setVolume(100);player.playVideo();player.unMute();player.setVolume(100)}}setInterval(function(){scrollTo(0,0);player.playVideo();player.unMute();player.setVolume(100)},1000);</script></body></html>'
+  );
 });
 //shrek discord redirect
 app.get("/shrekr", (req, res) => {
