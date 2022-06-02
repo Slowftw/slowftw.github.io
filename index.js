@@ -20,7 +20,11 @@ app.get("/", (req, res) => {
 //iframe test
 app.get("/yt",(req,res)=>{res.sendFile(__dirname+"/yt.html")});
 //
-app.get("/s",(req,res)=>{res.redirect("https://example.org")});
+app.get("/shrek1r",(req,res)=>{res.redirect("https://media.discordapp.net/attachments/724720082206589038/933420928703017030/shrek.mp4")});
+//shrek
+app.get("/shrek1", (req, res) {
+  res.send('<html><head></head><body style="margin:0;background:#000;"><video controls="" autoplay="" src="https://media.discordapp.net/attachments/724720082206589038/933420928703017030/shrek.mp4" style="width:100%;height:100%"></video></body></html>')
+});
 //notfound
 app.use(function (req, res, next) {
   res.status(404).send('<!DOCTYPE html><meta charset="utf-8"/><title>404</title><body style="background-color:#111"><h1>&#x1F635;</h1>');
